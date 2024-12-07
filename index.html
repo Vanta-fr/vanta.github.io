@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Cards</title>
+    <title>Interactive Cards and Buttons</title>
     <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: consolas;
         }
 
         html, body {
             height: 100%;
-            display: grid;
+            display: flex;
+            flex-direction: column;
             background: #1d061a;
+            font-family: consolas;
         }
 
         body {
-            justify-items: center;
-            align-items: flex-start;
-            padding-top: 50px; /* Adjust this value to position the text */
+            justify-content: space-between;
         }
 
         svg[height='0'] {
@@ -57,6 +56,7 @@
             align-items: center;
             flex-wrap: wrap;
             padding: 40px 0;
+            z-index: 10;
         }
 
         .container .box {
@@ -118,6 +118,12 @@
         .container .box:nth-child(3):before,
         .container .box:nth-child(3):after {
             background: linear-gradient(315deg, #4dff03, #00d0ff);
+        }
+
+        /* Updated Vanta Direct Download Card */
+        .container .box:nth-child(4):before,
+        .container .box:nth-child(4):after {
+            background: linear-gradient(315deg, #9b59b6, #2980b9); /* Gradient color */
         }
 
         .container .box span {
@@ -237,6 +243,72 @@
             border: 1px solid rgba(255, 0, 88, 0.4);
             box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
         }
+
+        /* New "Get Vanta Cheat" Button Style */
+        .download-btn {
+            display: inline-block;
+            font-size: 1.2em;
+            color: #fff;
+            background: #ff0058;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 0, 88, 0.4);
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #ffcf4d;
+            color: #1d061a;
+            box-shadow: 0 5px 25px rgba(255, 0, 88, 0.6);
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: auto;
+            margin-bottom: 40px;
+        }
+
+        .glass-btn {
+            width: 100px;
+            height: 100px;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            margin-left: 1em;
+            margin-right: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .glass-btn img {
+            width: 6em;
+        }
+
+        .glass-btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blue-btn:hover {
+            background-color: #dcf2ff;
+        }
+
+        .red-btn:hover {
+            background-color: #ffdfdf;
+        }
+
+        .amber-btn:hover {
+            background-color: #fff0d6;
+        }
+
     </style>
 </head>
 <body>
@@ -260,7 +332,6 @@
             <div class="content">
                 <h2>Cleaner</h2>
                 <p>Removes traces of cheat software to prevent detection and bans.</p>
-                
             </div>
         </div>
 
@@ -270,21 +341,43 @@
             <div class="content">
                 <h2>Bootstrap</h2>
                 <p>Safely installs cheat software without compromising system security.</p>
-                
+                <a href="#">Select Bootstrap</a>
             </div>
         </div>
 
- <!-- Vanta Direct Download Box -->
-<div class="box">
-    <span></span>
-    <div class="content">
-        <h2>Vanta Direct Download</h2>
-        <p>Direct download link for Vanta software, providing seamless installation.</p>
-        <a href="https://cdn.discordapp.com/attachments/1303496280684630016/1314697253700501624/Vanta_AIO.zip?ex=6754b6bb&is=6753653b&hm=b5b20b538d9b49c5d4680186dfc353ca39359bc3f98997733aa9fef7870824dd&" download>Download Now</a>
+        <!-- Vanta Direct Download Box -->
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Vanta Direct Download</h2>
+                <p>Direct download link for Vanta software, providing seamless installation.</p>
+                <a href="https://cdn.discordapp.com/attachments/1303496280684630016/1314697253700501624/Vanta_AIO.zip?ex=6754b6bb&is=6753653b&hm=b5b20b538d9b49c5d4680186dfc353ca39359bc3f98997733aa9fef7870824dd&" download>Download Now</a>
+            </div>
+        </div>
+
+        <!-- New "Get Vanta Cheat" Box -->
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Get Vanta Cheat</h2>
+                <p>Click below to get your hands on the ultimate cheat software. Safe and easy to use!</p>
+                <a href="https://your-download-link.com" target="_blank" class="download-btn">Get Vanta Cheat</a>
+            </div>
+        </div>
     </div>
-</div>
 
-
+    <div class="button-container">
+        <a href="https://discord.gg/NsvcyGCjM6" target="_blank" class="glass-btn blue-btn">
+            <img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="discord">
+        </a>
+    
+        <div class="glass-btn red-btn">
+            <img src="https://i.postimg.cc/LstJ4Hhf/youtube.png" alt="youtube">
+        </div>
+    
+        <div class="glass-btn amber-btn">
+            <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338432_1280.png" alt="tiktok">
+        </div>
     </div>
 
 </body>
